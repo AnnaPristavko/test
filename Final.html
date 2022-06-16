@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Анкета</title>
+	<link rel="stylesheet" href="annaDZ5.css">
+</head>
+<body>
+	<form>
+	<h1>Анкета</h1>
+	<table align="center">
+	<tr>
+		<td><p>Введите фамилию</p></td>
+		<td><p><input type="text" name="surname" placeholder="Фамилия"></p></td>
+	</tr>
+	<tr>
+	<td><p>Введите имя</p></td>
+	<td><p><input type="text" name="name" placeholder="Имя"></p></td>
+	</tr>
+	</table>
+	<p>Комментарий<br>
+		<textarea name="comment" rows="4" cols="42"></textarea></p>
+	
+	<p><strong>Загрузите фотографию</strong></p>
+		<input type="file" name="fileform"></p>
+	<p><input type="checkbox" name="agree" value="agreed">Я согласен на обработку данных</p>
+	<hr>
+	<p><strong>Проверка:</strong></p>
+	<p>На картинке изображен?</p>
+		<img src="cat.jpg" width="240" height="270" alt="котик">
+	<p><input type="radio" name="cat" value="Кот">Кот
+	<input type="radio" name="dog" value="Пес">Пес</p>
+	<p>
+		<input type="submit" value="Отправить" onclick="alert('Отправлено')">
+		<input type="reset" value="Сброс">
+	</p>
+	</form>
+</body>
+</html>
