@@ -1,6 +1,6 @@
 import random
 
-def is_valid(s): # проверка на соответствие введенного значения условию
+def is_valid(s): # проверка введенных значений
     return s.isdigit() and 1<=int(s)<=100 and float(s) - int(float(s)) == 0
 
 def input_number(): # ввод данных
@@ -9,31 +9,31 @@ def input_number(): # ввод данных
         if is_valid(guess):
             return int(guess)
         else:
-            print('Введите пожалуйста целое число от 1 до 100!:')
+            print('Введите пожалуйста целое число от 1 до 100:')
 
 
-def compare_number(down_num, up_num):  # Сравнение введенного значения с загаданным
+def compare_number(down_num, up_num):  # Сравнение с загаданным
     number = random.randint(down_num, up_num)
     counter=0
     while True:
         s = input_number()
         counter+=1
         if s<number:
-            print('Ваше число меньше загаданного, попробуйте еще разок')
+            print('Ваше число меньше загаданного, продолжайте угадывать')
         elif s>number:
-            print('Ваше число больше загаданного, попробуйте еще разок')
+            print('Ваше число больше загаданного, продолжайте угадывать')
         elif s==number:
             print('Вы угадали, поздравляю!')
             print('количество попыток:', counter)
             break
 
-def continue_game(): # Предложение продолжить игру
-    ans = input('Хотите продолжить ("д"/"н")?\n')
+def continue_game(): 
+    ans = input('Еще раз? ("д"/"н")?\n')
     while True:
         if ans not in ('y', 'д', 'n', 'н'):
-            ans = input('Продолжим игру? ("д"/"н")?\n')
+            ans = input('Еще раз? ("д"/"н")?\n')
         elif ans in ('n', 'н'):
-            print('Спасибо, что играли в числовую угадайку. Еще увидимся...')
+            print('Спасибо за игру! Приходите снова')
             return False
         else:
             return True
@@ -41,7 +41,7 @@ def continue_game(): # Предложение продолжить игру
 def game(): # Запуск игры
     print('Добро пожаловать в числовую угадайку!')
     while True:
-        print('Укажите, в каком диапазоне Вы готовы угадывать числа\n(Укажите диапазон в пределах от 1 до 100):\n')
+        print('Укажите диапазон в пределах от 1 до 100:')
         x, y = input_number(), input_number()
         if x > y:
             x, y = y, x
